@@ -1,0 +1,22 @@
+<p>book-authors works!</p>
+
+<a routerLink="/Home">Home</a><br>
+
+<br><br>
+<button (click)="getAllAuthors()">Click here to get all authors!</button>
+<ul>
+    <li *ngFor="let author of authors">
+        {{author.firstName}}--{{author.lastName}}
+    </li>
+</ul>
+<button (click)="getAuthor(4)">Click here to get info about author! Id: 4</button>
+<ul>
+    <li>Author Id: {{author.authorId}}
+        <br>
+        Author Name: {{author.firstName | titlecase}}
+        <br>
+        Author Surname: {{author.lastName | titlecase}}
+    </li>
+</ul>
+<br>
+<router-outlet></router-outlet>

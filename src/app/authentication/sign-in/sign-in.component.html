@@ -1,0 +1,17 @@
+<p>sign-in works!</p>
+
+<a routerLink="/Home">Home</a><br>
+<a routerLink="/SignUp">SignUp</a><br>
+<a routerLink="/About">About</a><br>
+
+<br><br>
+<form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
+    <input type="text" name="email" placeholder="Enter your email here:..." ngModel>
+    <br><br>
+    <input type="password" name="password" placeholder="Enter your password here:..." ngModel>
+    <br><br>
+    <button>LogIn</button>
+</form>
+<br>
+
+<router-outlet></router-outlet>

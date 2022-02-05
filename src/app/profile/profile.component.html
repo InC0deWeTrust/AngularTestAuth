@@ -1,0 +1,12 @@
+<p>profile works!</p>
+
+<a routerLink="/Home">Home</a><br><br>
+
+<form #UpdateUserPassword="ngForm" (ngSubmit)="updateUserPassword(UpdateUserPassword.value)">
+    <input type="email" name="email" placeholder="Your email here:" ngModel><br>
+    <input type="password" name="oldPassword" placeholder="Your old password here:" ngModel><br>
+    <input type="password" name="newPassword" placeholder="Your new password here:" ngModel><br>
+    <button>Update Your Password!</button>
+</form>
+
+<router-outlet></router-outlet>

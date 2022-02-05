@@ -1,0 +1,47 @@
+<p>books works!</p>
+
+<a routerLink="/Home">Home</a><br>
+
+<br><br>
+<button (click)="getAllBooks()">Click here to get all books!</button>
+<ul>
+    <li *ngFor="let book of books">
+        {{book.name}}--{{book.dateOfDelivery | date}}--{{book.bookId}}
+    </li>
+</ul>
+<br>
+<button (click)="getAllBookTypes()">Click here to get all book types!</button>
+<ul>
+    <li *ngFor="let bookType of bookTypes">
+        {{bookType.bookType}}
+    </li>
+</ul>
+<br>
+<button (click)="getBook(1)">Click here to get info about book! Id: 1</button>
+<ul>
+    <li>Book Id: {{book.bookId}}
+        <br>
+        Book Name: {{book.name | titlecase}}
+        <br>
+        Book Type Id: {{book.bookTypeId}}
+        <br>
+        Delivery Date: {{book.dateOfDelivery | date}}
+        <br>
+        Author Id: {{book.authorId}}
+    </li>
+</ul>
+<br>
+<button (click)="getFullInfoAboutBook(2)">Click here to get FULL info about book! Id: 2</button>
+<ul>
+    <li>Book Id: {{fullInfoBook.bookId}}
+        <br>
+        Book Name: {{fullInfoBook.name | titlecase}}
+        <br>
+        Book Type: {{fullInfoBook.type?.type}}
+        <br>
+        Delivery Date: {{fullInfoBook.dateOfDelivery | date}}
+        <br>
+        Author: {{fullInfoBook.author?.firstName | titlecase}} {{fullInfoBook.author?.lastName | titlecase}}
+    </li>
+</ul>
+<router-outlet></router-outlet>
